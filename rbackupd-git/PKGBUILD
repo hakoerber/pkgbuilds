@@ -1,0 +1,32 @@
+# Maintainer: Hannes Körber <hannes.koerber+rbackupd at gmail dot com>
+pkgname='rbackupd-git'
+pkgver=0.1.0.gd740659
+pkgrel=1
+pkgdesc='A backup program creating snapshots through rsync.'
+arch=('any')
+url='http://github.com/whatevsz/rbackupd'
+license=('GPL3')
+groups=()
+depends=('python>=3.3' 'rsync>2.5.7')
+makedepends=('git')
+optdepends=()
+provides=('rbackupd')
+conflicts=('rbackupd')
+replaces=()
+backup=()
+options=()
+install=
+source=("$pkgname"::'git+http://github.com/whatevsz/rbackupd.git')
+noextract=()
+md5sums=('SKIP')
+
+package() {
+    cd "$pkgname"
+    python setup.py install --root="$pkgdir/" --optimize=1
+}
+
+pkgver() {
+    cd "$pkgname"
+    version="$(git describe --long | sed 's/-/./g' | sed 's/v//' )"
+    printf "%s" "$version"
+}
