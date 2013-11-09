@@ -6,18 +6,12 @@ pkgdesc='A backup program creating snapshots through rsync.'
 arch=('any')
 url='http://github.com/whatevsz/rbackupd'
 license=('GPL3')
-groups=()
 depends=('python>=3.3' 'rsync>2.5.7')
 makedepends=('git')
 optdepends=()
 provides=('rbackupd')
 conflicts=('rbackupd')
-replaces=()
-backup=()
-options=()
-install=
 source=("$pkgname"::'git+http://github.com/whatevsz/rbackupd.git')
-noextract=()
 md5sums=('SKIP')
 
 package() {
