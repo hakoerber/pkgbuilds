@@ -1,6 +1,6 @@
 # Maintainer: Hannes Körber <hannes.koerber+rbackupd at gmail dot com>
 pkgname='rbackupd-git'
-pkgver=0.1.0.gd740659
+pkgver=0.5.21.gee2eb4f
 pkgrel=1
 pkgdesc='A backup program creating snapshots through rsync.'
 arch=('any')
